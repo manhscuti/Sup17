@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="tdma.css"/>
+     <title>Giao diện Bảng Giá</title>
+</head>
+<body>
+  <div id="loader">Đang tải...</div>
+
+
+  <div class="stars" id="stars"></div>
+
+  <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <a onclick="showSection('home')">Trang chủ</a>
+    <a onclick="toggleSubmenu()">Bảng giá</a>
+    <div class="submenu" id="submenu">
+      <a onclick="showSection('facebook')">Facebook</a>
+      <a onclick="showSection('tiktok')">TikTok</a>
+      <a onclick="showSection('instagram')">Instagram</a>
+    </div>
+    <a onclick="showSection('contact')">Liên hệ</a>
+  </div>
+
+  <div class="container">
+    <h2 id="pageTitle">Gửi Yêu Cầu</h2>
+
+<div id="home" class="content-section active">
+  <p>Nhấp vào biểu tượng ở góc màn hình để xem.<br> Nếu cần có thể inbox trực tiếp tới.</p>
+  
+  <div class="form-box">
+    <form onsubmit="sendTelegram(event)">
+      <label for="userName"><i class="fa fa-user icon-wrapper"></i>Tên người gửi:</label>
+      <input type="text" id="name" placeholder="Tên của bạn" required>
+      <label for="message"><i class="
+fa-solid fa-comment-dots icon-wrapper"></i>Nội dung:</label>
+      <textarea id="message" placeholder="Nhập nội dung cần gửi..." rows="4" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane icon-wrapper"></i> Gửi tới Bot</button>
+
+    </form>
+  </div>
+</div>
+
+    <div id="facebook" class="content-section">
+      <p><i class="fa fa-facebook-official ma1"></i>Bảng giá Facebook:</p>
+      <table>
+        <tr><th>Gói</th><th>Giá</th><th>Số lượng</th></tr>
+        <tr><td>Like Tây</td><td>25.000d</td><td>1000</td></tr>
+        <tr><td>Like Việt</td><td>35.000đ</td><td>1000</td></tr>
+        <tr><td>Like Page</td><td>45.000đ</td><td>1000</td></tr>
+        <tr><td>Follow</td><td>50.000đ</td><td>1000</td></tr>
+        <tr><td>Cảm Xúc</td><td>200.000đ</td><td>1000</td></tr>
+        <tr><td>Share Bài Viết</td><td>20.000đ</td><td>1000</td></tr>
+        <tr><td>Mắt Livestream</td><td><i class="fas fa-screwdriver-wrench"></i> BTrì</td><td><i class="fas fa-screwdriver-wrench"></i> BTrì</td></tr>
+      </table>
+    </div>
+
+    <div id="tiktok" class="content-section">
+      <p><i class="fa fa-tiktok ma1"></i>Bảng giá TikTok:</p>
+      <table>
+        <tr><th>Gói</th><th>Giá</th><th>Số lượng</th></tr>
+        <tr><td>Follow</td><td>35.000đ</td><td>1000</td></tr>
+        <tr><td>Follow Tây</td><td>25.000đ</td><td>1000</td></tr>
+        <tr><td>View</td><td>10.000đ</td><td>1000</td></tr>
+        <tr><td>Tym</td><td>20.000đ</td><td>1000</td></tr>
+        <tr><td>Share</td><td>10.000đ</td><td>1000</td></tr>
+        <tr><td>Favorites</td><td>20.000đ</td><td>1000</td></tr>
+        <tr><td>Comment</td><td>600.000đ</td><td>1000</td></tr>
+      </table>
+    </div>
+
+    <div id="instagram" class="content-section">
+      <p><i class="fa fa-instagram-square ma1"></i>Bảng giá Instagram:</p>
+      <table>
+        <tr><th>Gói</th><th>Giá</th><th>Số lượng</th></tr>
+        <tr><td>Follow</td><td>50.000đ</td><td>1000</td></tr>
+        <tr><td>Like</td><td>18.000đ</td><td>1000</td></tr>
+        <tr><td>Comment</td><td>500.000đ</td><td>1000</td></tr>
+      </table>
+    </div>
+
+    <div id="contact" class="content-section">
+      <p>Bạn có thể liên hệ qua Telegram: <a href="https://t.me/username" target="_blank">@username</a></p>
+    </div>
+
+      <p><i class="fa fa-server icon-wrapper"></i>Server hoạt động</p>
+    <div class="footer">&copy;𝙈𝙞𝙣𝙝𝘼𝙣𝙝𝙨 - 2025 | <i class="fa fa-server"></i> | <i class="fa fa-rocket"></i></div>
+  </div>
+
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">🦈</button>
+    <h2>Thông Báo</h2>
+    <b><strong>Lưu ý:</strong> Vui lòng Thanh Toán trước khi yêu cầu.</b>
+<d><i class="fa fa-bank"></i></d>
+    <h4>MBank: 0921174162</h4>
+    <h4>Momo: 0921174162</h4>
+    <a><i class="fa fa-warning blink" style="color: red;"></i> Server mới bắt đầu có thể chưa ổn định.</a>
+<br>
+    <c><i class="fa fa-cog spin-custom gradient-icon"></i> Khi bạn thanh toán rồi và gửi đơn lên hệ thống sẽ tự động tăng follow. Vì Server chưa ổn định có thể lên chậm</c>
+  </div>
+</div>
+
+  <script src="huhu.js"></script>
+</body>
+</html>
